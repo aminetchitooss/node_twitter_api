@@ -36,7 +36,7 @@ npm start
 npm run dev
 
 ```
-## Special deployment config
+### Special deployment config
 
   If deployed to don't forget to create a "Procfile"
 
