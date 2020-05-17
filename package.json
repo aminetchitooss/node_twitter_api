@@ -1,0 +1,19 @@
+{
+  "name": "node_twitter_bot",
+  "version": "1.0.0",
+  "description": " a fun bot that tweets",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index",
+    "dev": "nodemon index "
+  },
+  "author": "tchitos",
+  "license": "ISC",
+  "devDependencies": {
+    "dotenv": "^8.2.0",
+    "nodemon": "^2.0.4"
+  },
+  "dependencies": {
+    "twit": "^2.2.11"
+  }
+}
