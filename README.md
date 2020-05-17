@@ -7,7 +7,13 @@
 
 ## How to use
   
-  Make sure to set up a ".env" config file to set up variables like mail and password
+  Make sure to set up a ".env" config file to set up variables like 
+  
+  CONSUMER_KEY = XXXXXX
+  CONSUMER_SECRET = XXXXXX
+  ACCESS_TOKEN = XXXXXX-6EdFO28sUq55xk2F0TYwYIjuBPfzxc
+  ACCESS_TOKEN_SECRET = XXXXXX
+  
   then run these commands 
   
 ```bash
