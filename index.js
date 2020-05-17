@@ -3,35 +3,28 @@ const config = require('./config')
 
 const T = new Twit(config)
 
-function tweetIt(pTweetMsg) {
+let count = 0
 
-    T.post('statuses/update', { status: pTweetMsg }, tweeted)
-
-    function tweeted(err, data, response) {
-        if (err) {
-            console.log('Smth went wrooooooooong', err)
-        } else {
-            console.log('nicely done')
+function enableBot(pTweetMsg, pLimitTweets, pLoopTime) {
+    console.log("Bot On ...")
+    const loopFunction = setInterval(() => {
+        const rn = Math.floor(Math.random() * 100)
+        T.post('statuses/update', { status: pTweetMsg + rn }, (err) => {
+            if (err) {
+                console.log('Smth went wrooooooooong', err)
+            } else {
+                console.log('nicely done')
+            }
+            if (pLimitTweets && count == pLimitTweets) {
+                console.log('Bot Off')
+            }
+        })
+        count++;
+        if (pLimitTweets && count == pLimitTweets) {
+            clearInterval(loopFunction)
         }
-
-    }
+    }, pLoopTime * 1000);
 }
 
-function getTweets(pSearch) {
-    const params = {
-        q: pSearch,
-        count: 10,
-        // lang: 'fr'
-    }
-
-    T.get('search/tweets', params, gotData)
-
-    function gotData(err, data, response) {
-        console.log(data.statuses.map(res => res.text))
-    }
-}
-
-//to tweet 
-tweetIt('hellow World')
-
-getTweets('javascript')
+// Trigger the bot
+enableBot("#BotEnabled .. and the random winner is number ", 3, 20)

@@ -1,13 +1,34 @@
-# On the master branch is a simple nodejs twitter api 
+# On this branch is a simple twitter bot
 
-### So basically getting tweets with requests paramaters and posting tweets (texts+media)  
-> For more informations: https://developer.twitter.com
+### As a quick start, every N (defaultValue = 60) seconds the bot is sending a tweet  
+ 
+> with the function enableBot(pTweetMsg, pLimitTweets, pLoopTime)
 
+  >> you can set the tweet message, 
+  >> the interval in seconds (be careful of short loop time you might get your account shut down)
+  >> the limit of tweets (optional) 
 
+### I've used a randmom number generator in order to mismatch consecutive tweets
+  
+  > Twitter doesn't allow the same consecutive tweets
 
 ## How to use
   
-  Make sure to set up a ".env" config file to set up variables like mail and password
+  Make sure to set up a ".env" config file to set up variables like 
+  
+```bash
+CONSUMER_KEY = XXXXXX
+CONSUMER_SECRET = XXXXXX
+ACCESS_TOKEN = XXXXXX-XXXXX
+ACCESS_TOKEN_SECRET = XXXXXX
+```
+
+  If deployed to don't forget to create a "Procfile"
+
+```bash
+worker: node index.js
+```
+
   then run these commands 
   
 ```bash
