@@ -25,12 +25,6 @@ ACCESS_TOKEN = XXXXXX-XXXXX
 ACCESS_TOKEN_SECRET = XXXXXX
 ```
 
-  If deployed to don't forget to create a "Procfile"
-
-```bash
-worker: node index.js
-```
-
   then run these commands 
   
 ```bash
@@ -42,3 +36,13 @@ npm start
 npm run dev
 
 ```
+## deployment
+
+  If deployed to don't forget to create a "Procfile"
+
+```bash
+worker: node index.js
+```
+
+# If depolying to heroku from another branch use 
+  git push -f heroku <yourbranchname>:master
