@@ -38,7 +38,7 @@ npm i
 
 npm start
 
-#with nodemone (restart server with every save)
+#with nodemon (restart server with every save)
 npm run dev
 
 ```
