@@ -10,10 +10,10 @@
   "author": "tchitos",
   "license": "ISC",
   "devDependencies": {
-    "dotenv": "^8.2.0",
     "nodemon": "^2.0.4"
   },
   "dependencies": {
+    "dotenv": "^8.2.0",
     "twit": "^2.2.11"
   }
 }
