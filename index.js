@@ -25,6 +25,5 @@ function enableBot(pTweetMsg, pLimitTweets, pLoopTime) {
         }
     }, pLoopTime * 1000);
 }
-
 // Trigger the bot
 enableBot("#BotEnabled .. and the random winner is number ", 3, 20)
