@@ -36,7 +36,7 @@ npm start
 npm run dev
 
 ```
-## deployment
+## Special deployment config
 
   If deployed to don't forget to create a "Procfile"
 
@@ -44,5 +44,6 @@ npm run dev
 worker: node index.js
 ```
 
-# If depolying to heroku from another branch use 
-  git push -f heroku <yourbranchname>:master
+### If depolying to heroku from another branch use 
+
+    git push -f heroku <yourbranchname>:master
