@@ -2,7 +2,7 @@
 
 > A fun and simple twitter bot
 
-### Quick start:
+## Quick start:
 
 > Every N seconds the bot is sending a tweet  
  
@@ -14,7 +14,7 @@
 
     > The limit of tweets (optional) 
 
-### I've used a random number generator in order to mismatch consecutive tweets
+Note: I've used a random number generator in order to mismatch consecutive tweets
   
   > Twitter doesn't allow the same consecutive tweets
 
