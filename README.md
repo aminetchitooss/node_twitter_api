@@ -1,11 +1,20 @@
 # On the master branch is a simple nodejs twitter api 
 
-### So basically getting tweets with requests paramaters and posting tweets (texts+media)  
-> For more informations: https://developer.twitter.com
-
-## HOME Page
+## Home Page
 
 ![](public/home.png)
+
+
+## So in a nutshell
+
+> Getting tweets with the requested paramaters (search, language, Geo tags ...) 
+
+> Posting tweets "texts + media (photos, gifs, videos) "
+
+> Creaing images from texts and posting them
+
+> Feel free to check my twitter example:  https://twitter.com/node_starter
+
 
 ## How to use
   
@@ -29,3 +38,6 @@ npm start
 npm run dev
 
 ```
+
+
+> For more informations: https://developer.twitter.com
