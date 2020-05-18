@@ -1,8 +1,12 @@
-# On this branch is a simple twitter bot
+# On this branch
 
-### As a quick start, every N (defaultValue = 60) seconds the bot is sending a tweet  
+> A fun and simple twitter bot
+
+### Quick start:
+
+> Every N seconds the bot is sending a tweet  
  
-> with the function enableBot(pTweetMsg, pLimitTweets, pLoopTime)
+> Using the function enableBot above
 
     > You can set the tweet message, 
 
@@ -10,7 +14,7 @@
 
     > The limit of tweets (optional) 
 
-### I've used a randmom number generator in order to mismatch consecutive tweets
+### I've used a random number generator in order to mismatch consecutive tweets
   
   > Twitter doesn't allow the same consecutive tweets
 
