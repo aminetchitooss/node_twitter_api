@@ -3,7 +3,9 @@
 ### So basically getting tweets with requests paramaters and posting tweets (texts+media)  
 > For more informations: https://developer.twitter.com
 
+## HOME Page
 
+![](public/home.png)
 
 ## How to use
   
