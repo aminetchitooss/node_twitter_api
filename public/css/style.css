@@ -1,0 +1,130 @@
+:root {
+  --color-black: #2a2a2a;
+  --color-text: #a9a9a9;
+  --color-light: #fff;
+  --color-text-light: #444;
+  --font-base-family: "Manrope", "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  --line-height: 1.2;
+}
+html,
+body {
+  height: 100%;
+}
+/** * SASS utils */
+.font-800,
+.header__logo {
+  font-weight: 800;
+}
+.font-600,
+.main .main__button {
+  font-weight: 600;
+}
+.font-400,
+.header .nav a,
+.main .main__heading,
+.main .main__sub {
+  font-weight: 400;
+}
+/** * BASE */
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: var(--font-base-family, sans-serif);
+  background: var(--color-light);
+  color: var(--color-black);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  line-height: var(--line-height);
+  padding-left: 2em;
+}
+/** * FLOW UTILITY */
+.flow {
+  --metric-rhythm: 2rem;
+  --flow-space: var(--metric-rhythm);
+}
+.flow > * + * {
+  margin-top: 1em;
+  margin-top: var(--flow-space);
+}
+/** * HEADER */
+.header {
+  display: flex;
+  height: 100%;
+}
+.header__wrapper {
+  display: flex;
+  align-items: center;
+  --flow-space: 2.5rem;
+}
+.header__logo {
+  font-size: 1.1rem;
+  display: inline-block;
+}
+.header .nav .nav__list {
+  display: flex;
+  padding-left: 3rem;
+}
+.header .nav .nav__item {
+  padding-left: 2rem;
+}
+.header .nav a {
+  letter-spacing: 2px;
+  font-size: 0.825rem;
+  text-decoration: none;
+  color: var(--color-black);
+  padding-bottom: 0.5em;
+}
+.header .nav a.active {
+  border-bottom: 2px solid var(--color-black);
+}
+/** * SECTION */
+.section__img {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+/** * MAIN */
+.main {
+  transition-duration: 1s;
+  height: 412px;
+}
+.main .main__heading {
+  font-size: 3.6rem;
+  max-width: 13ch;
+  line-height: 1.4;
+}
+.list {
+  padding: 1em 0 1em 2em;
+}
+.main ul,
+li {
+  color: var(--color-text);
+  font-size: 1rem;
+  max-width: 38ch;
+}
+.main .main__button {
+  background: var(--color-black);
+  color: var(--color-light);
+  border-radius: 200px;
+  font-size: 1rem;
+  width: 10.5rem;
+  height: 2.5rem;
+  cursor: pointer;
+  line-height: 1.4;
+  padding: 11px 20px;
+}
+svg {
+  width: 100%;
+  max-height: 100%;
+}
+#collapseTweets {
+  min-height: 100px;
+}
