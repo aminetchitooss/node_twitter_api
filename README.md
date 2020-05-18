@@ -1,15 +1,17 @@
-# On the master branch is a simple nodejs twitter api 
+# On this master branch 
+
+> This is my fun nodejs twitter api 
 
 ![](public/home.png)
 
 
 ## So in a nutshell
 
-> Getting tweets with the requested paramaters (search, language, Geo tags ...) 
+  > Getting tweets with the requested paramaters (search, language, Geo tags ...) 
 
-> Posting tweets "texts + media (photos, gifs, videos) "
+  > Posting tweets "texts + media (photos, gifs, videos) "
 
-> Creaing images from texts and posting them
+  > Creaing images from texts and posting them
 
 > Feel free to check my twitter example:  https://twitter.com/node_starter
 
