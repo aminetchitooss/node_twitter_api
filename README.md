@@ -6,13 +6,13 @@
 
 > Every N seconds the bot is sending a tweet  
  
-> Using the function enableBot above
+### Using the function enableBot above
 
-    > You can set the tweet message, 
+* You can set the tweet message, 
 
-    > The interval in seconds (be careful of short loop time you might get your account shut down)
+* The interval in seconds (be careful of short loop time you might get your account shut down)
 
-    > The limit of tweets (optional) 
+* The limit of tweets (optional) 
 
 Note: I've used a random number generator in order to mismatch consecutive tweets
   
