@@ -1,6 +1,7 @@
 const Twit = require('twit')
 const cors = require('cors')
 const config = require('./config')
+const canvas = require('./canvas')
 const bodyParser = require('body-parser');
 const exphbs = require('express-handlebars');
 const express = require('express')
@@ -9,6 +10,7 @@ const Joi = require('@hapi/joi');
 const path = require('path');
 const port = process.env.PORT || 4200
 const Encryption = new config()
+const Draw = new canvas()
 const T = new Twit(Encryption.twitterConfig)
 const SUCCESS = "SUCCESS"
 const ERROR = "ERROR"
@@ -80,7 +82,7 @@ app.post('/postPlainTweet', (req, res) => {
 
     return tweetIt({ status: req.body.msgPost }).then(result => {
         console.log('nicely done tweet sent')
-        return res.end(JSON.stringify(result))
+        return res.end('Media tweet sent Ok')
     }).catch(err => {
         console.log('Smth went wrooooooooong in posting', err)
         return res.status(500).send(JSON.stringify(err))
@@ -108,7 +110,39 @@ app.post('/postMediaTweet', async (req, res) => {
 
     return tweetIt({ status: req.body.msgPost, media_ids: medialistIds }).then(result => {
         console.log('Media tweet sent')
-        return res.end(JSON.stringify(result))
+        return res.end('Media tweet sent Ok')
+    }).catch(err => {
+        console.log('Smth went wrooooooooong in posting media', err)
+        return res.status(500).send(JSON.stringify(err))
+    })
+
+});
+app.post('/postDrawTweet', async (req, res) => {
+
+    if (Encryption.checkCipherError(req.body.cipher))
+        return res.status(401).send('cipher error')
+
+    const { error } = validatePostDrawTweetData(req.body)
+    if (error) { return res.status(403).send(error.details[0].message) }
+
+    const result = await Draw.drawFrom(req.body.messageToDraw)
+
+    // res.end("data:image/png;base64," + result)
+    const vListB64Content = [result]
+    const medialistIds = []
+    for (const content of vListB64Content) {
+        try {
+            const resp = await uploadMedia(content)
+            medialistIds.push(resp.data)
+        } catch (error) {
+            return res.status(500).send(error)
+        }
+
+    }
+
+    return tweetIt({ status: req.body.msgPost, media_ids: medialistIds }).then(result => {
+        console.log('Media tweet sent')
+        return res.end('Media tweet sent Ok')
     }).catch(err => {
         console.log('Smth went wrooooooooong in posting media', err)
         return res.status(500).send(JSON.stringify(err))
@@ -192,6 +226,14 @@ function validatePostMediaTweetData(pData) {
     const schema = Joi.object({
         msgPost: Joi.string().required(),
         listB64Content: Joi.array().items(Joi.string().base64()).required(),
+        cipher: Joi.string(),
+    })
+    return schema.validate(pData)
+}
+function validatePostDrawTweetData(pData) {
+    const schema = Joi.object({
+        messageToDraw: Joi.string().required(),
+        msgPost: Joi.string(),
         cipher: Joi.string(),
     })
     return schema.validate(pData)
