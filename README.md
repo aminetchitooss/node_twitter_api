@@ -6,7 +6,7 @@
 
 > Every N seconds the bot is sending a tweet  
  
-### Using the function enableBot above
+Using the function **enableBot** above
 
 * You can set the tweet message, 
 
