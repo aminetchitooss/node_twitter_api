@@ -1,7 +1,5 @@
 # On the master branch is a simple nodejs twitter api 
 
-## Home Page
-
 ![](public/home.png)
 
 
