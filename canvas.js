@@ -57,6 +57,11 @@ class Draw {
         return nodeHtmlToImage({
             encoding: 'base64',
             html: canvas,
+            puppeteerArgs:{ 
+                // headless:true,
+                args: ['--no-sandbox'] ,
+                // ignoreDefaultArgs: ['--disable-extensions'],
+            },
         }).then((data) => data)
     }
 }
