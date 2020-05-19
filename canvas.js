@@ -58,7 +58,6 @@ class Draw {
             encoding: 'base64',
             html: canvas,
             puppeteerArgs:{
-                headless: true,
                 args: ['--no-sandbox', '--disable-setuid-sandbox'],
               }
         }).then((data) => data)
