@@ -27,7 +27,6 @@ class Draw {
                 font-size: 2.8rem;
                 padding:0 1em;
                 font-family: "Comic Sans MS", cursive, sans-serif;
-                font-family: "Chalkduster", fantasy, sans-serif;
                 color:white;
                 text-transform: capitalize;
                 text-align: center;
@@ -53,7 +52,6 @@ class Draw {
         // for await (const iterator of object) {
 
         // }
-        console.log('canvas before')
         return nodeHtmlToImage({
             encoding: 'base64',
             html: canvas,
