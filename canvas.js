@@ -59,7 +59,8 @@ class Draw {
             html: canvas,
             puppeteerArgs:{ 
                 headless:true,
-                args: ['--no-sandbox'] }
+                args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-dev-shm-usage'] },
+                ignoreDefaultArgs: ['--disable-extensions'],
         }).then((data) => data)
     }
 }
