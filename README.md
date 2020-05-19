@@ -2,7 +2,7 @@
 
 > This is my fun nodejs twitter api 
 
-![](public/home.png)
+![](public/homePage.png)
 
 
 ## So in a nutshell
