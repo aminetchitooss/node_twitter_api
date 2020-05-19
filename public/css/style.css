@@ -38,10 +38,10 @@ body {
   background: var(--color-light);
   color: var(--color-black);
   display: flex;
-  align-items: flex-start;
   justify-content: center;
   line-height: var(--line-height);
   padding-left: 2em;
+  flex-wrap: wrap;
 }
 /** * FLOW UTILITY */
 .flow {
@@ -59,7 +59,6 @@ body {
 }
 .header__wrapper {
   display: flex;
-  align-items: center;
   --flow-space: 2.5rem;
 }
 .header__logo {
@@ -86,15 +85,16 @@ body {
 /** * SECTION */
 .section__img {
   width: 50%;
-  height: 100%;
+  /* max-height: 100%; */
   display: flex;
   align-items: flex-end;
   justify-content: center;
+  max-width: 50%;
 }
 /** * MAIN */
 .main {
   transition-duration: 1s;
-  height: 412px;
+  min-height: 765px;
 }
 .main .main__heading {
   font-size: 3.6rem;
@@ -127,4 +127,52 @@ svg {
 }
 #collapseTweets {
   min-height: 100px;
+}
+
+.frame {
+  max-width: 300px;
+  animation: 1.5s fadeIn;
+  animation-fill-mode: forwards;
+  visibility: hidden;
+}
+.frameWaiting {
+  animation: 1.3s fadeOut;
+  animation-fill-mode: forwards;
+  height: 30px;
+  margin: 0;
+  visibility: visible;
+  position: relative;
+  top: 100px;
+  left: 25%;
+}
+
+@keyframes fadeIn {
+  99% {
+    visibility: hidden;
+  }
+  100% {
+    visibility: visible;
+  }
+}
+@keyframes fadeOut {
+  from {height: 30px;
+    visibility: visible;}
+  to {height: 0;
+    
+    visibility: hidden;}
+}
+@media (max-width: 866px) {
+  .section__img {
+    filter: blur(1px);
+    z-index: -1;
+    position: absolute;
+    right: 0;
+    top: 14%;
+    width: 40%;
+  }
+}
+@media (min-width: 700px) {
+  .header__wrapper {
+    align-items: center;
+  }
 }
