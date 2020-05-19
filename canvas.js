@@ -26,7 +26,7 @@ class Draw {
                 background-image: linear-gradient(135deg, #e66465, #9198e5);
                 font-size: 2.8rem;
                 padding:0 1em;
-                font-family: "Comic Sans MS", cursive, sans-serif;
+                font-family: "Roboto", cursive, sans-serif;
                 color:white;
                 text-transform: capitalize;
                 text-align: center;
