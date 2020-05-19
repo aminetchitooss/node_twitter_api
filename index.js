@@ -142,13 +142,13 @@ app.post('/postDrawTweet', async (req, res) => {
 
         // return tweetIt({ status: req.body.msgPost, media_ids: medialistIds }).then(result => {
         //     console.log('Media tweet sent')
-        //     return res.end('Media tweet sent Ok')
+        //     return res.end('Media Draw tweet sent Ok')
         // }).catch(err => {
         //     console.log('Smth went wrooooooooong in posting media', err)
         //     return res.status(500).send(JSON.stringify(err))
         // })        
     } catch (error) {
-        return res.end('error in canvasing')
+        return res.end('error in canvasing', error)
     }
 
 });

@@ -53,7 +53,7 @@ class Draw {
         // for await (const iterator of object) {
 
         // }
-        console.log('canvas', canvas)
+        console.log('canvas before')
         return nodeHtmlToImage({
             encoding: 'base64',
             html: canvas
