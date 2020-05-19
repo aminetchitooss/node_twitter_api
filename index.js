@@ -148,7 +148,7 @@ app.post('/postDrawTweet', async (req, res) => {
         //     return res.status(500).send(JSON.stringify(err))
         // })        
     } catch (error) {
-        return res.end('error in canvasing', error)
+        return res.end(error.message)
     }
 
 });
