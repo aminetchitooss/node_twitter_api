@@ -57,9 +57,7 @@ class Draw {
         return nodeHtmlToImage({
             encoding: 'base64',
             html: canvas,
-            puppeteerArgs:{
-                args: ['--no-sandbox', '--disable-setuid-sandbox'],
-              }
+            puppeteerArgs:{ args: ['--no-sandbox'] }
         }).then((data) => data)
     }
 }
