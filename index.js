@@ -127,26 +127,26 @@ app.post('/postDrawTweet', async (req, res) => {
 
     try {
         const result = await Draw.drawFrom(req.body.messageToDraw)
-        res.end("data:image/png;base64," + result)
-        // const vListB64Content = [result]
-        // const medialistIds = []
-        // for (const content of vListB64Content) {
-        //     try {
-        //         const resp = await uploadMedia(content)
-        //         medialistIds.push(resp.data)
-        //     } catch (error) {
-        //         return res.status(500).send(error)
-        //     }
+        // res.end("data:image/png;base64," + result)
+        const vListB64Content = [result]
+        const medialistIds = []
+        for (const content of vListB64Content) {
+            try {
+                const resp = await uploadMedia(content)
+                medialistIds.push(resp.data)
+            } catch (error) {
+                return res.status(500).send(error)
+            }
 
-        // }
+        }
 
-        // return tweetIt({ status: req.body.msgPost, media_ids: medialistIds }).then(result => {
-        //     console.log('Media tweet sent')
-        //     return res.end('Media Draw tweet sent Ok')
-        // }).catch(err => {
-        //     console.log('Smth went wrooooooooong in posting media', err)
-        //     return res.status(500).send(JSON.stringify(err))
-        // })        
+        return tweetIt({ status: req.body.msgPost, media_ids: medialistIds }).then(result => {
+            console.log('Media tweet sent')
+            return res.end('Media Draw tweet sent Ok')
+        }).catch(err => {
+            console.log('Smth went wrooooooooong in posting media', err)
+            return res.status(500).send(JSON.stringify(err))
+        })
     } catch (error) {
         return res.end(error.message)
     }
